@@ -4,6 +4,7 @@
 /public/assets/fonts
 
 /.npmrc
+/*.patch
 
 # Compiled output
 /dist

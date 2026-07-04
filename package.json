@@ -1,7 +1,7 @@
 {
   "name": "usenet.dex.de",
   "homepage": "http://usenet.dex.de/",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host=0.0.0.0",
