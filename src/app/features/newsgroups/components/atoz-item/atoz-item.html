@@ -1,0 +1,19 @@
+  <span [class.m-deleted]="!atozItem().active">
+    @if ( atozItem().type === 'hierarchie' ) {
+      <a [routerLink]="['/hierarchy', atozItem().name]">{{ atozItem().name }}</a>
+
+    } @else {
+      <a [routerLink]="['/newsgroup', atozItem().name]">{{ atozItem().name }}</a>
+    }
+
+    @if ( !atozItem().active ) {
+      <span class="e_icon"><i class="fa fa-trash-alt"></i></span>
+    }
+
+    <span class="e_range">
+      <span>{{ atozItem().range.from | formatDataMonth:'short' }}</span>
+      &ndash;
+      <span>{{ atozItem().range.to | formatDataMonth:'short' }}</span>
+   </span>
+
+  </span>

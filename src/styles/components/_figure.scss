@@ -1,0 +1,12 @@
+div.usenet-dex-de_figure {
+  margin: 1.5rem 0 1.5rem 1.5rem;
+
+  display: flex;
+
+  &.m-grey {
+    div {
+      padding: 0.75em 1.25em;
+      background: #eee;
+    }
+  }
+}

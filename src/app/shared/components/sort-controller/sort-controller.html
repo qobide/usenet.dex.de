@@ -1,0 +1,17 @@
+@if (buttons().length) {
+
+  <div class="usenet-dex-de_segctrl m-flat">
+    @for (button of buttons(); track button.value) {
+      <button (click)="select(button.value)" [class.m-selected]="button.value === selected()">
+        {{ button.label }}
+
+          @if (button.direction === directionEnum.Ascending) {
+            <i class="fa fa-caret-down"></i>
+
+          } @else {
+            <i class="fa fa-caret-up"></i>
+          }
+      </button>
+    }
+  </div>
+}

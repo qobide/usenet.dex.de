@@ -1,0 +1,48 @@
+<app-hierarchy-title [name]="name" [active]="active" [range]="range"></app-hierarchy-title>
+
+<div class="usenet-dex-de_chart">
+  <div class="e_title">
+    <h3>Postings pro </h3>
+
+    <div class="usenet-dex-de_segctrl">
+      <button (click)="togglePostGranularity(granularity.Months)" [class.m-selected]="postGranularity === granularity.Months">Monat</button>
+      <button (click)="togglePostGranularity(granularity.Years)"  [class.m-selected]="postGranularity === granularity.Years" >Jahr</button>
+    </div>
+  </div>
+
+  <app-chart-postings [months]="months" [(granularity)]="postGranularity" [(year)]="postZoom"/>
+</div>
+
+<div class="usenet-dex-de_chart">
+  <div class="e_title">
+    <h3>Abnahme/Zunahme pro </h3>
+
+    <div class="usenet-dex-de_segctrl">
+      <button (click)="toggleGainGranularity(granularity.Months)" [class.m-selected]="gainGranularity === granularity.Months">Monat</button>
+      <button (click)="toggleGainGranularity(granularity.Years)"  [class.m-selected]="gainGranularity === granularity.Years" >Jahr</button>
+    </div>
+  </div>
+
+  <app-chart-gain-loss [months]="months" [years]="years" [(granularity)]="gainGranularity" [year]="gainZoom" [waterfall]="gainWaterfall"/>
+</div>
+
+<div class="usenet-dex-de_chart">
+  <div class="e_title">
+    <h3>Ranking pro </h3>
+
+    <div class="usenet-dex-de_segctrl">
+      <button (click)="toggleRankGranularity(granularity.Months)" [class.m-selected]="rankGranularity === granularity.Months">Monat</button>
+      <button (click)="toggleRankGranularity(granularity.Years)"  [class.m-selected]="rankGranularity === granularity.Years" >Jahr</button>
+    </div>
+  </div>
+
+  <app-chart-ranking [months]="months" [years]="years" [granularity]="rankGranularity" [year]="rankZoom" (rankingClicked)="redirectToRanking($event)"/>
+</div>
+
+<div class="usenet-dex-de_chart">
+  <div class="e_title">
+    <h3>Jahresverläufe</h3>
+  </div>
+
+  <app-chart-seasons [months]="months"/>
+</div>

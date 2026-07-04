@@ -1,0 +1,53 @@
+<app-hierarchy-title [name]="name" [active]="active" [range]="range"></app-hierarchy-title>
+
+<div class="usenet-dex-de_chart">
+  <div class="e_title">
+    <h3>Postings pro </h3>
+
+    <div class="usenet-dex-de_segctrl">
+      <button (click)="togglePostGranularity(granularity.Months)" [class.m-selected]="postGranularity === granularity.Months">Monat</button>
+      <button (click)="togglePostGranularity(granularity.Years)"  [class.m-selected]="postGranularity === granularity.Years" >Jahr</button>
+    </div>
+  </div>
+
+  <app-chart-postings [months]="months" [(granularity)]="postGranularity" [(year)]="postMonthsZoom"/>
+</div>
+
+<div class="usenet-dex-de_chart">
+  <div class="e_title">
+    <h3>Abnahme/Zunahme pro </h3>
+
+    <div class="usenet-dex-de_segctrl">
+      <button (click)="toggleGainGranularity(granularity.Months)" [class.m-selected]="gainGranularity === granularity.Months">Monat</button>
+      <button (click)="toggleGainGranularity(granularity.Years)"  [class.m-selected]="gainGranularity === granularity.Years" >Jahr</button>
+    </div>
+  </div>
+
+  <app-chart-gain-loss [months]="months" [years]="years" [(granularity)]="gainGranularity" [(year)]="gainMonthsZoom" [waterfall]="gainWaterfall"/>
+</div>
+
+<div class="usenet-dex-de_chart">
+  <div class="e_title">
+    <h3>Jahresverläufe</h3>
+  </div>
+
+  <app-chart-seasons [months]="months"/>
+</div>
+
+<div class="usenet-dex-de_chart">
+  <div class="e_title">
+    <h3>Untergruppen pro </h3>
+
+    <div class="usenet-dex-de_segctrl">
+      <button (click)="toggleGroupGranularity(granularity.Months)" [class.m-selected]="groupGranularity === granularity.Months">Monat</button>
+      <button (click)="toggleGroupGranularity(granularity.Years)"  [class.m-selected]="groupGranularity === granularity.Years" >Jahr</button>
+    </div>
+  </div>
+
+  <app-chart-groups [months]="months" [years]="years" [(granularity)]="groupGranularity" [(year)]="groupMonthsZoom"/>
+</div>
+
+
+<div class="usenet-dex-de_section">
+  <app-atoz-list [list]="atoz" label="Untergruppen" />
+</div>

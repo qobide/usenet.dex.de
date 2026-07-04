@@ -1,0 +1,9 @@
+@use "../../../../../styles/utils/fonts";
+
+:host {
+  display: table;
+  width: 100%;
+
+  font-family: fonts.$font-family-condensed;
+  font-size: 1.25em;
+}

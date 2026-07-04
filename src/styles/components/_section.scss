@@ -1,0 +1,40 @@
+div.usenet-dex-de_section {
+  margin: 1rem 0 2rem;
+  padding: 1em;
+
+  background: #fff;
+
+  border-radius: 0.5em;
+  border-bottom: 1px solid #9999;
+
+  > *:first-child { margin-top: 0; }
+  > *:last-child { margin-bottom: 0; }
+
+  div.e_title {
+    margin-bottom: 1em;
+    h2, h3 {
+      margin: 0;
+
+      i { margin-right: 0.25em; }
+    }
+  }
+
+  div.e_header {
+    margin: 0 0 1rem;
+    display: flex;
+    gap: 1ex;
+
+    > div {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:first-child > :last-child  { margin-right: auto; }
+      &:last-child  > :first-child { margin-left:  auto; }
+    }
+
+    h2, h3 { margin: 0; }
+  }
+
+}

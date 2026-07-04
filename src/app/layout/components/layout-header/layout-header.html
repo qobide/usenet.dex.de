@@ -1,0 +1,15 @@
+<header>
+  <div class="e_title">
+    <a class="e_index" [routerLink]="['/']" routerLinkActive="m-active" [routerLinkActiveOptions]="{exact:true}">
+      <span class="e_title">Usenet</span><span class="e_domain">.dex.de</span>
+    </a>
+    <div class="e_slogan">
+      Ein kompakter Überblick über die Aktivität im deutschsprachigen Usenet.
+    </div>
+  </div>
+  <div class="e_links">
+    <a [routerLink]="['/hierarchy/de.ALL']" routerLinkActive="m-active">de.ALL</a>
+    <a [routerLink]="['/atoz']" routerLinkActive="m-active">A-Z</a>
+    <a [routerLink]="['/ranking']" routerLinkActive="m-active">Rangfolgen</a>
+  </div>
+</header>

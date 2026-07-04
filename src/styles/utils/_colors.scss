@@ -1,0 +1,10 @@
+$aqua:    #00F0FF;
+$green:   #00FF81;
+$orange:  #FFA900;
+$pumpkin: #FF6800;
+
+$gradient-warm: linear-gradient(23deg, $orange, $pumpkin);
+$gradient-warm-reverse: linear-gradient(203deg, $pumpkin, $orange);
+
+$gradient-cold: linear-gradient(23deg, $aqua, $green);
+$gradient-cold-reverse: linear-gradient(203deg, $green, $aqua);

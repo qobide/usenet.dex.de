@@ -1,0 +1,22 @@
+@use "../../../../styles/utils/fonts";
+
+:host {
+  footer {
+    display: flex;
+  }
+
+  span.e_copy {
+    font-family: fonts.$font-family-serif;
+
+    a {
+      text-decoration: none;
+      &:hover { text-decoration: underline; }
+    }
+  }
+
+  span.e_version {
+    flex-grow: 1;
+    text-align: right;
+    opacity: 0.25;
+  }
+}

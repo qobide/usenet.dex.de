@@ -1,0 +1,38 @@
+<div class="usenet-dex-de_section">
+
+  @if( label() || showSwitcher() ) {
+    <div class="e_header">
+      <div class="e_label"> @if ( label() ) {
+        <h3>{{ label() }} </h3>
+
+      } @else {
+        <div class="e_query" [class.m-active]="filterName().length">
+          <span class="e_icon"><i class="fa fa-search"></i></span>
+          <input type="text" [(ngModel)]="filterName"/>
+          <span class="e_clear" (click)="filterName.set('')"><i class="fa fa-times-circle"></i></span>
+        </div>
+
+      }</div>
+
+      <div class="e_sort">
+        <app-sort-controller [options]="sortOptions()" [(selected)]="sortSelected" [(direction)]="sortDirection"/>
+      </div>
+
+      <div class="e_activity">  @if ( showSwitcher() )  {
+        <div class="usenet-dex-de_segctrl">
+          @for (option of switcherOptions; track option.type) {
+            <button (click)="selectedActivity.set(option.type)" [class.m-selected]="selectedActivity() === option.type">{{ option.label }}</button>
+          }
+        </div>
+      }</div>
+
+    </div>
+  }
+
+  <div class="e_list">
+    @for (item of sortedList(); track item.name) {
+      <app-atoz-item [atozItem]="item"/>
+    }
+  </div>
+
+</div>

@@ -1,0 +1,61 @@
+@use "../../../../../styles/utils/fonts";
+@use "../../../../../styles/utils/layout";
+@use "../../../../../styles/utils/colors";
+
+:host {
+
+  div.e_query {
+    --pad-base: 5px;
+
+    display: flex;
+
+    border-radius: calc(var(--pad-base) * 4);
+    padding: var(--pad-base) calc(var(--pad-base) * 1.25);
+
+    background: linear-gradient(65deg, #ddd9 15%, #eee9 85%);
+
+    &:focus-within {
+      outline: auto;
+    }
+
+    span { padding: var(--pad-base); }
+
+    input {
+      background: none;
+      border: none;
+      outline: none;
+
+      font-family: fonts.$font-family-condensed;
+      font-size: inherit;
+    };
+
+    span.e_clear {
+      cursor: pointer;
+      visibility: hidden;
+    }
+
+    &.m-active {
+      background: linear-gradient(65deg, rgba(colors.$pumpkin, 0.5)  15%, rgba(colors.$orange, 0.5) 85%);
+
+      span.e_clear {
+        visibility: unset;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @include layout.media-non-wide {
+    div.e_query, div.e_sort {
+      display: none;
+    }
+  }
+
+
+  div.e_list {
+    font-family: fonts.$font-family-condensed;
+  }
+}

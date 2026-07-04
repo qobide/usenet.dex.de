@@ -1,0 +1,24 @@
+@use "../utils/fonts";
+
+html {
+  font-family: fonts.$font-family;
+}
+
+body {
+  background: #eee;
+}
+
+h1 {
+  font-family: fonts.$font-family-serif;
+}
+
+h2, h3, h4 {
+  font-family: fonts.$font-family-serif;
+  font-weight: 500;
+}
+
+a {
+  color: #000;
+
+  &:visited { color: #000; }
+}

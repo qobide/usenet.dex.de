@@ -1,0 +1,35 @@
+<div class="usenet-dex-de_title m-prevnext">
+  <div class="usenet-dex-de_prevnext m-white m-left">
+    @if (prev) {
+      <span class="e_first"><a [routerLink]="['/ranking', first.year, first.month ]">
+        <i class="fa fa-chevron-double-left"></i>
+      </a></span>
+
+      <span class="e_prev"><a [routerLink]="['/ranking', prev.year, prev.month ]">
+        <i class="fa fa-chevron-left"></i>
+        {{ prev | formatDataMonth:'short' }}
+      </a></span>
+    }
+  </div>
+
+  <h1>{{  { year, month } | formatDataMonth:'fullMonth' }} <a [routerLink]="['/ranking', year]">{{ year }}</a></h1>
+
+  <div class="usenet-dex-de_prevnext m-white m-right">
+    @if (next) {
+      <span class="e_next"><a [routerLink]="['/ranking', next.year, next.month ]">
+        {{ next | formatDataMonth:'short' }}
+        <i class="fa fa-chevron-right"></i>
+      </a></span>
+
+      <span class="e_last"><a [routerLink]="['/ranking', last.year, last.month ]">
+        <i class="fa fa-chevron-double-right"></i>
+      </a></span>
+    }
+  </div>
+</div>
+
+<div class="usenet-dex-de_section">
+
+<app-ranking-list [rankingList]="ranking"></app-ranking-list>
+
+</div>

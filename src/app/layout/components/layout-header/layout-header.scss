@@ -1,0 +1,133 @@
+@use "../../../../styles/utils/layout";
+
+:host {
+  header {
+    display: flex;
+
+    a {
+      color: #333;
+      text-decoration: none;
+
+      text-wrap: nowrap;
+
+      &:hover { text-decoration: underline; }
+    }
+
+    div.e_title {
+      a {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: center;
+      }
+
+      span.e_title {
+        font-weight: 600;
+      }
+
+      div.e_slogan { display: none; }
+    }
+
+    div.e_links {
+      display: inline-flex;
+      flex-grow: 1;
+      flex-wrap: wrap;
+      gap: 0.5em 1em;
+
+      a.m-active { font-weight: 600; }
+    }
+
+    @include layout.media-non-wide {
+      flex-direction: column;
+      gap: 0.25em;
+
+      div.e_title {
+        font-size: 1.25em;
+      }
+
+      div.e_links {
+        border-top: 1px solid #0006;
+        padding-top: 0.5em;
+
+        a { font-size: 0.9em; }
+      }
+    }
+
+    @include layout.media-wide {
+      gap: 1em;
+      align-items: baseline;
+
+      span.e_title {
+        font-size: 1.5em;
+        font-weight: 600;
+      }
+
+      div.e_links {
+        align-items: baseline;
+      }
+    }
+
+
+    /* ---------------------------------------------------------------- */
+    /* -- home page --------------------------------------------------- */
+    /* ---------------------------------------------------------------- */
+
+    body.usenet-dex-de-home & {
+      min-height: 30vh;
+      gap: 2em;
+
+      flex-direction: column;
+      justify-content: flex-end;
+
+      @include layout.media-non-wide {
+        min-height: 25vh;
+        font-size: 0.9em;
+      }
+
+      div.e_title {
+        margin-top: 7.5vh;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0.5em;
+
+        a {
+          text-decoration: none !important;
+
+                                             font-size: 4em;
+          @include layout.media-small      { font-size: 3em; }
+          @include layout.media-min(52rem) { font-size: 5em; }
+
+          span.e_title { font-size: unset; }
+        }
+
+        div.e_slogan {
+          display: block;
+          text-align: center;
+        }
+      }
+
+      div.e_links {
+        width: 100%;
+        flex-grow: unset;
+        justify-content: center;
+
+        border-top: none;
+
+        font-size: 1.5em;
+        margin-bottom: 1em;
+
+        a {
+          text-decoration: underline;
+        }
+
+        span.e_grow { flex-grow: unset; }
+      }
+    }
+
+  }
+
+}

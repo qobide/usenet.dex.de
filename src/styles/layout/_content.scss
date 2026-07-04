@@ -1,0 +1,5 @@
+@use "../utils/layout";
+
+div.app-layout-content {
+  @include layout.content-container;
+}

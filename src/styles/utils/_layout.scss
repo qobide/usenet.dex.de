@@ -1,0 +1,55 @@
+$media-width-small-max: 38rem;
+$media-width-wide-min:  48rem;
+
+@mixin media-min ($width) {
+  @media (width >= $width) {
+    @content;
+  }
+}
+
+@mixin media-small {
+  @media (width < $media-width-small-max) {
+    @content;
+  }
+}
+
+@mixin media-non-small {
+  @media (width >= $media-width-small-max) {
+    @content;
+  }
+}
+
+@mixin media-non-wide {
+  @media (width < $media-width-wide-min) {
+    @content;
+  }
+}
+
+@mixin media-wide {
+  @media (width >= $media-width-wide-min) {
+    @content;
+  }
+}
+
+@mixin content-container {
+  $margin-sides: 1rem;
+
+  margin-left:  $margin-sides;
+  margin-right: $margin-sides;
+
+  @include media-non-small {
+    width: 36rem;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include media-wide {
+    width: unset;
+
+    $margin-sides: 5rem;
+
+    margin-left: $margin-sides;
+    margin-right: $margin-sides;
+  }
+}

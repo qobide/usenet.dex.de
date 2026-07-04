@@ -1,0 +1,28 @@
+div.usenet-dex-de_chart {
+  background: #fff;
+  padding: 1em;
+  margin-bottom: 1rem;
+
+  border-radius: 0.5em;
+  border-bottom: 1px solid #9999;
+
+  div.e_title {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+
+    margin-bottom: 0.5em;
+
+    h3 {
+      margin: 0;
+      font-weight: normal;
+    }
+
+    div.usenet-dex-de_segctrl {
+      margin-left: 1ex;
+    }
+
+  }
+}

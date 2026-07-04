@@ -1,0 +1,24 @@
+@use "../../../../../styles/utils/fonts";
+
+:host {
+  h1 {
+    font-weight: normal;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    span.e_title {
+      font-family: fonts.$font-family-condensed;
+      font-weight: normal;
+
+    }
+
+    span.e_icon {
+      font-size: 1rem;
+      margin-left: 1ex;
+      color: #999;
+    }
+  }
+
+}

@@ -1,0 +1,38 @@
+@use "../utils/layout";
+
+div.usenet-dex-de_title {
+  margin-bottom: 1rem;
+
+  &.m-prevnext {
+
+    @include layout.media-small {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      h1 {
+        grid-column: 1/3;
+        grid-row: 1/2;
+
+        margin: 0 0 0.5em;
+
+        text-align: center;
+      }
+
+      div.usenet-dex-de_prevnext.m-right{
+        justify-content: flex-end;
+      }
+    }
+
+    @include layout.media-non-small {
+      display: flex;
+      align-items: center;
+
+      h1 {
+        margin: 0;
+        flex-grow: 1;
+        text-align: center;
+      }
+    }
+
+ }
+}

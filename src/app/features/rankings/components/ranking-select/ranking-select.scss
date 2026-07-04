@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  overflow-x: auto;
+
+  > div.e_year {
+    display: flex;
+    gap: 1ex;
+    margin-bottom: 1ex;
+
+    > span {
+      flex-grow: 1;
+      text-align: center;
+
+      &.e_year {
+        font-weight: bold;
+
+        > * {
+          background: #ccc ;
+        }
+      }
+
+      > * {
+        display: block;
+
+        padding: 2px 5px;
+        background: #eee;
+        color : #333;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      &.m-invalid > * {
+        visibility: hidden;
+      }
+    }
+  }
+}

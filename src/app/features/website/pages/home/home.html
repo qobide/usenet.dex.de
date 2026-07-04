@@ -1,0 +1,75 @@
+
+@if (top10.length) {
+
+<h2>TopTen {{ latest | formatDataMonth }}</h2>
+
+<div class="usenet-dex-de_section">
+  <app-ranking-list [rankingList]="top10"></app-ranking-list>
+</div>
+
+<div class="usenet-dex-de_continue m-white"><a [routerLink]="[ '/ranking', latest.year, latest.month]">komplette Rangfolge anzeigen <i class="fa fa-chevron-double-right"></i></a></div>
+}
+
+<div class="usenet-dex-de_section">
+  <div class="e_title">
+    <h3><i class="far fa-exclamation-triangle"></i> Hinweis</h3>
+  </div>
+
+  <p>Die hier präsentierten Zahlen sind mit Vorsicht zu genießen.</p>
+  <p>
+     Zum einen stammen sie aus einer Vielzahl von Quellen mit unterschiedlichen Zählmethoden, zum anderen sind sie unvollständig.
+     Da insbesondere die Summen unvollständig sind, sind hier die größten Abweichungen von der Realität zu erwarten.
+     Folglich eignen sich viele der Grafiken nicht als verlässliche Referenz.</p>
+</div>
+
+<div class="usenet-dex-de_section">
+  <div class="e_title">
+    <h3>Datenquellen</h3>
+  </div>
+    @if (sources.length) {
+      <div class="usenet-dex-de_figure"><div>
+        <table class="e_sources"><tbody>
+          @for (source of sources; track $index) {
+            <tr style="--source-color: {{ source[3] }}">
+              <td class="e_from">{{ source[0] | formatDataMonth:'short' }}
+              <td class="e_sep">&ndash;</td>
+              <td class="e_to">{{ source[1] | formatDataMonth:'short' }}</td>
+              <td class="e_source">{{ source[2] }}</td>
+            </tr>
+          }
+          </tbody></table>
+      </div></div>
+    }
+
+    <p>Die Daten wurden initial aus der monatlichen Statistik von
+       <a href="http://www.pflock.de/usenet/statistik.htm">Utz Pflock</a>
+       übernommen und für die Jahre 1992-1998 von
+       <a href="http://www.chpr.at/usenet-stats/">Christian Pree</a> zur
+       Verfügung gestellt. Seit 2009 erstellt <a href="https://news.szaf.org/">Thomas H. Hochstein</a> die monatlichen Statistiken.</p>
+</div>
+
+@if (missing.length) {
+
+  <div class="usenet-dex-de_section">
+    <div class="e_title">
+      <h3>Fehlende Monate</h3>
+    </div>
+
+    <div class="usenet-dex-de_figure"><div>
+      <table class="e_missing"><tbody>
+        @for (miss of missing; track $index) {
+          <tr>
+            <td class="e_date">{{ miss[0] | formatDataMonth:'short' }}</td>
+            <td class="e_type">{{ miss[1] | dataRangeMissingLabel  }}</td>
+          </tr>
+        }
+      </tbody></table>
+    </div></div>
+
+    <p>Einige Monate sind nicht oder nur teilweise vorhanden, da
+       hier entweder keinerlei Zahlen vorliegen, oder die Werte
+       so falsch sind, daß sie weniger Verwirrung stiften, wenn
+       sie komplett entfernt werden.</p>
+  </div>
+
+}

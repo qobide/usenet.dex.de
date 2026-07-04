@@ -1,0 +1,12 @@
+@for ( year of years; track $index ) {
+  <div class="e_year">
+    <span class="e_year"><a [routerLink]="[ '/ranking', year.year ]">{{ year.year }}</a></span>
+    @for ( month of year.months; track $index ) {
+      @if (month.valid) {
+        <span class="e_month"><a [routerLink]="[ '/ranking', year.year, month.month ]">{{ month.short }}</a></span>
+      } @else {
+        <span class="e_month m-invalid"><span>{{ month.short }}</span></span>
+      }
+    }
+  </div>
+}

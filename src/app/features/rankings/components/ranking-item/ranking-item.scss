@@ -1,0 +1,67 @@
+@use "../../../../../styles/utils/fonts";
+@use "../../../../../styles/utils/layout";
+
+:host {
+  display: table-row;
+
+  &:nth-child(odd) { background: #eee; }
+
+  > span {
+   display: table-cell;
+   padding: 0.5ex 1ex;
+
+    &.e_rank {
+      font-family: fonts.$font-family;
+      font-weight: bold;
+
+      text-align: center;
+    }
+
+    &.e_trend {
+      text-wrap: nowrap;
+
+      font-size: 0.75em;
+      text-align: right;
+
+      > span { display: block; }
+
+      i {
+        margin-left: 0.5ex;
+        color: #ccc;
+
+      }
+
+      &.m-up {
+        i { color : green; }
+      }
+
+      &.m-down {
+        i { color : red; }
+      }
+    }
+
+    &.e_name {
+      width: 100%;
+      max-width: 0;
+
+      white-space: nowrap;
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+    }
+
+    &.e_posts {
+      text-align: right;
+    }
+
+    &.e_gain {
+      font-size: 0.75em;
+      color: #666;
+      text-align: right;
+    }
+  }
+
+  @include layout.media-non-wide {
+    span.e_trend, span.e_posts, span.e_gain { display: none; }
+  }
+}

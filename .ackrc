@@ -1,0 +1,4 @@
+--sort-files
+
+--ignore-dir=dist
+--ignore-dir=.angular

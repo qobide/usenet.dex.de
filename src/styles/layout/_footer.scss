@@ -1,0 +1,10 @@
+@use "../utils/layout";
+
+footer {
+  @include layout.content-container;
+
+  margin-top: 3rem;
+  padding: 1em 0 3em;
+
+  border-top: 1px solid #6666;
+}

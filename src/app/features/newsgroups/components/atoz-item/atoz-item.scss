@@ -1,0 +1,38 @@
+@use "../../../../../styles/utils/layout";
+
+:host {
+  display: block;
+
+  &:nth-child(odd) { background: #eee; }
+
+  padding: 0.5em 0.75em;
+
+  > span {
+    display: flex;
+    flex-wrap: wrap;
+
+    // align-items: center;
+    gap: 0.25em;
+
+    a {
+      font-size: 1.25em;
+    }
+
+    i { margin-left: 1ex; font-size: 0.75em; }
+
+    span.e_range {
+      flex-grow: 1;
+      text-align: right;
+
+      text-wrap: nowrap;
+    }
+
+    &.m-deleted {
+      color: #999;
+
+      a { color: #666; }
+
+      font-weight: 200;
+    }
+  }
+}

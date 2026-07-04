@@ -1,0 +1,15 @@
+@use "../utils/fonts";
+@use "../utils/colors";
+@use "../utils/layout";
+
+header {
+                            margin: 0 0 2rem;
+  @media (width >= 48rem) { margin: 0 0 3rem; }
+
+  padding: 1em 1.5rem 0.75em;
+
+  background: colors.$gradient-warm;
+
+  font-size: 1.25rem;
+  font-family: fonts.$font-family-serif;
+}

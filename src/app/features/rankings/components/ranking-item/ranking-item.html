@@ -1,0 +1,20 @@
+  <span class="e_rank">{{ rankingItem().rank }}</span>
+  <span class="e_trend" [class.m-up]="rankingItem().up" [class.m-down]="rankingItem().down">
+    {{ rankingItem().last }}
+
+    @if ( rankingItem().up   ) {
+      <i class="fa fa-arrow-circle-up"></i>
+
+    } @else if ( rankingItem().down ) {
+      <i class="fa fa-arrow-circle-down"></i>
+
+    } @else if (!rankingItem().last) {
+      <i class="fa fa-plus-circle"></i>
+
+    } @else {
+      <i class="fa fa-scrubber"></i>
+    }
+  </span>
+  <span class="e_name"><a [routerLink]="['/newsgroup',rankingItem().name]">{{ rankingItem().name }}</a></span>
+  <span class="e_posts">{{ rankingItem().postings }}</span>
+  <span class="e_gain">{{ rankingItem().gain }}</span>

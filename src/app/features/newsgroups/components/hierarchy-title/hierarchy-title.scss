@@ -1,0 +1,86 @@
+@use "../../../../../styles/utils/fonts";
+@use "../../../../../styles/utils/mixins";
+@use "../../../../../styles/utils/layout";
+
+:host {
+  div {
+    display: flex;
+    gap: 0.5rem;
+
+    width: 100%;
+    align-items: stretch;
+
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    margin-bottom: 1rem;
+
+    font-size: 1rem;
+    font-family: fonts.$font-family-condensed;
+
+    > * {
+      padding: 0.25em 0.75em;
+
+      background-color: #fff;
+      border-radius: 0.5rem;
+      border-bottom: 2px solid #6666;
+    }
+  }
+
+  h1.e_title {
+    margin: 0;
+
+    @include layout.media-non-wide {
+      flex: 1 1 100%;
+    }
+
+    display: inline-flex;
+    align-items: baseline;
+
+    flex-grow: 1;
+    flex-wrap: wrap;
+
+    font-size: revert;
+    font-family: inherit;
+    font-weight: normal;
+
+    a.e_path {
+      font-size: 80%;
+      text-decoration: none;
+
+      color: #333;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::after {
+        content: '.';
+      }
+    }
+  }
+
+  span.e_range {
+    display: inline-flex;
+    color: #111c;
+
+    font-size: 1.25rem;
+    text-wrap: nowrap;
+
+    &.m-inactive {
+      color: #fffc;
+      background: #c00;
+    }
+
+    > * { align-self: center; }
+  }
+
+  a.e_download {
+    display: inline-flex;
+    width: 2rem;
+
+    > * { align-self: center; width: 100%; text-align: center;  }
+
+    @include mixins.button;
+  }
+}

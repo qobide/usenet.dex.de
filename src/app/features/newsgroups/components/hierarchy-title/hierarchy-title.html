@@ -1,0 +1,27 @@
+<div>
+  <h1 class="e_title">
+    @if (segments().length) {
+      @for (seg of segments(); track $index) {
+        <a class="e_path" [routerLink]="['/hierarchy', seg.name]">{{ seg.segment }}</a>
+      }
+    }
+    <span class="e_name">
+      {{ title() }}
+    </span>
+  </h1>
+
+  <a class="e_download" href="{{ csvURL() }}">
+    <i class="fa fa-download"></i>
+  </a>
+
+  @if (range(); as range) {
+    <span class="e_range" [class.m-inactive]="!active()">
+      <span>
+        {{ range.from | formatDataMonth:'short' }}
+        &ndash;
+        {{ range.to | formatDataMonth:'short' }}
+      </span>
+    </span>
+  }
+
+</div>

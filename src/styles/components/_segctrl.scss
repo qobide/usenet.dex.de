@@ -1,0 +1,60 @@
+@use "../utils/fonts";
+@use "../utils/colors";
+
+div.usenet-dex-de_segctrl {
+  --pad-base: 5px;
+
+  display: inline-flex;
+  align-items: baseline;
+
+  gap: calc(var(--pad-base) * 0.75);
+
+  font-size: 1rem;
+
+  font-family: fonts.$font-family-condensed;
+  font-weight: normal;
+
+  background: linear-gradient(65deg, colors.$green 15%, colors.$aqua 85%);
+
+  &.m-warm { background: linear-gradient(65deg, colors.$orange 15%, colors.$pumpkin 85%); }
+  &.m-flat { background: linear-gradient(65deg, #ddd 15%, #eee 85%); }
+
+  border-radius: calc(var(--pad-base) * 4);
+  padding: var(--pad-base) calc(var(--pad-base) * 1.25);
+
+  > * {
+    font-size: 1rem !important;
+
+    border-radius: calc(var(--pad-base) * 2.5) !important;
+    padding: calc(var(--pad-base) * 0.5) calc(var(--pad-base) * 3) !important;
+
+    border: none;
+    background: none;
+
+    &:hover:not(.m-selected) {
+      background: #fffc !important;
+    }
+
+    &.m-selected {
+      color: white;
+      background: #000c;
+    }
+  }
+
+  &.m-flat > * {
+    &:hover:not(.m-selected) {
+      background: #0003 !important;
+    }
+
+    &.m-selected {
+      color: #000c;
+      background: colors.$orange;
+    }
+  }
+
+  > button {
+    font: inherit;
+
+    cursor: pointer;
+  }
+}

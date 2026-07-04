@@ -1,0 +1,25 @@
+@use "../utils/mixins";
+
+div.usenet-dex-de_continue {
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    padding: 0.5em 1em;
+
+    border-radius: 1em;
+    background-color: #eee;
+
+    text-decoration: none;
+    color: #333;
+
+    @include mixins.button;
+  }
+
+  &.m-white > a {
+    background-color: #fff;
+  }
+}

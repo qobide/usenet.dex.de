@@ -1,0 +1,62 @@
+@use "../../../../../styles/utils/fonts";
+
+:host {
+
+  table {
+    td {
+      padding: 0.5ex 1ex;
+
+      &:first-child { padding-left: 2ex;  }
+      &:last-child  { padding-right: 2ex; }
+    }
+  }
+
+  table.e_sources {
+    border-collapse: separate;
+    border-spacing: 0 1ex;
+
+    margin-top: -1ex;
+    margin-bottom: -1ex;
+
+    tr {
+      background: linear-gradient(65deg, var(--source-color) 20%, color-mix(in srgb, var(--source-color) 60%, white) 70%);
+    }
+
+    td.e_from {
+      padding-right: 0;
+      text-align: center;
+      font-family: fonts.$font-family-condensed;
+    }
+
+    td.e_sep  {
+      padding: 0.5ex;
+      text-align: center;
+    }
+
+    td.e_to {
+      padding-left: 0;
+      text-align: center;
+      font-family: fonts.$font-family-condensed;
+    }
+  }
+
+  table.e_missing {
+    border-collapse: collapse;
+
+    tr:nth-child(2n+1) {
+      background: #ddd;
+    }
+
+    td {
+      padding: 0.75ex 1ex;
+
+      &:first-child { padding-left:  2ex; }
+      &:last-child  { padding-right: 2ex; }
+
+      &.e_date {
+        text-align: right;
+        font-family: fonts.$font-family-condensed;
+      }
+    }
+  }
+}

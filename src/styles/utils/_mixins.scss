@@ -1,0 +1,20 @@
+@use "colors";
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin button {
+  &:hover {
+    text-shadow: 1px 1px #fff6;
+    background: linear-gradient(135deg, colors.$orange 50%, colors.$pumpkin);
+  }
+
+  &:active {
+    text-shadow: 1px 1px #fff6;
+    background: linear-gradient(135deg, colors.$orange, colors.$pumpkin 50%);
+  }
+}
