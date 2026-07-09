@@ -1,13 +1,13 @@
 {
   "name": "usenet.dex.de",
   "homepage": "http://usenet.dex.de/",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host=0.0.0.0",
     "build": "ng build",
-    "deploy_stage" : "ng build --configuration staging    && rsync -avz --delete dist/next/browser/ $npm_config_staging_path",
-    "deploy"       : "ng build --configuration production && rsync -avz --delete dist/next/browser/ $npm_config_production_path",
+    "deploy_stage" : "ng build --configuration staging    && rsync -rptvz --delete dist/next/browser/ $npm_config_staging_path",
+    "deploy"       : "ng build --configuration production && rsync -rptvz --delete dist/next/browser/ $npm_config_production_path",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"

@@ -1,8 +1,13 @@
 RewriteEngine on
 
+RewriteRule ^pix/.*/(de\..*\.ALL)\.png$ /hierarchy/$1 [R=permanent,L]
+RewriteRule ^pix/.*/(de\..*)\.png$      /newsgroup/$1 [R=permanent,L]
+
+RewriteRule ^pix - [G,L]
+
 RewriteRule ^(de\..*\.ALL)\.html$ /hierarchy/$1 [R=permanent,L]
 RewriteRule ^(de\..*)\.html$      /newsgroup/$1 [R=permanent,L]
-RewriteRule ^atoz\.html$          /atoz         [R=permanent,L]
+RewriteRule ^atoz\.html$          /atoz     	[R=permanent,L]
 
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
