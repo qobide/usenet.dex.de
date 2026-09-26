@@ -1,3 +1,5 @@
+@use "./functions";
+
 $media-width-small-max: 38rem;
 $media-width-wide-min:  48rem;
 
@@ -32,24 +34,6 @@ $media-width-wide-min:  48rem;
 }
 
 @mixin content-container {
-  $margin-sides: 1rem;
-
-  margin-left:  $margin-sides;
-  margin-right: $margin-sides;
-
-  @include media-non-small {
-    width: 36rem;
-
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @include media-wide {
-    width: unset;
-
-    $margin-sides: 5rem;
-
-    margin-left: $margin-sides;
-    margin-right: $margin-sides;
-  }
+  margin-left:  functions.vpClamp(1rem, 5rem, $media-width-small-max, $media-width-wide-min);
+  margin-right: functions.vpClamp(1rem, 5rem, $media-width-small-max, $media-width-wide-min);
 }

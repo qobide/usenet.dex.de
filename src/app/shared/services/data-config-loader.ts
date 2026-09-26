@@ -14,6 +14,7 @@ export class DataConfigLoader {
 
   config : DataConfigInfo = {
     version : 0,
+    compiledAt : '',
     range : { oldest : { year : 0, month : 0 }, latest : { year : 0, month : 0 } },
     valid : []
   };

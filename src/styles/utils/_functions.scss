@@ -1,0 +1,10 @@
+@use "sass:math";
+
+@function vpClamp($min, $max, $vpMin, $vpMax) {
+  $change: math.div(($max - $min), ($vpMax - $vpMin));
+
+  $a: $max - $vpMax * $change;
+  $b: 100vi * $change;
+
+  @return clamp($min, $a + $b, $max);
+}
