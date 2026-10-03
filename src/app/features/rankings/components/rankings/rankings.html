@@ -1,0 +1,23 @@
+<h2>{{ rankings().month | formatDataMonth }}</h2>
+
+<div class="usenet-dex-de_section">
+  <app-ranking-list [rankingList]="rankings().postings"></app-ranking-list>
+</div>
+
+<div class="usenet-dex-de_continue m-white"><a [routerLink]="[ '/ranking', rankings().month.year, rankings().month.month]">komplette Rangfolge anzeigen <i class="fa fa-chevron-double-right"></i></a></div>
+
+@if (showGains()) {
+
+<h3>Aufsteiger</h3>
+
+  <div class="usenet-dex-de_section">
+    <app-ranking-list class="m-gains" [rankingList]="rankings().winners" [style]="'gain'"></app-ranking-list>
+  </div>
+
+  <h3>Absteiger</h3>
+
+  <div class="usenet-dex-de_section">
+    <app-ranking-list class="m-gains" [rankingList]="rankings().losers" [style]="'gain'"></app-ranking-list>
+  </div>
+
+}

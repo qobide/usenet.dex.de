@@ -1,5 +1,5 @@
-import { RankingItemInfo } from '../../../features/rankings/models/ranking-item-info';
+import { RankingsInfo } from '../../../features/rankings/models/rankings-info';
 
 export interface HomeInfo {
-  top10? : RankingItemInfo[]
+  rankings? : RankingsInfo;
 }

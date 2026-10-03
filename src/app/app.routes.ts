@@ -74,7 +74,7 @@ export const routes: Routes = [
     path: 'ranking',
     component: Ranking,
     title : 'Rangfolgen',
-    resolve : { top10 : rankingResolver },
+    resolve : { rankings : rankingResolver },
   },
   {
     path: '**',

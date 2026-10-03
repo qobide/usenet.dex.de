@@ -1,0 +1,37 @@
+@use "../../../../../styles/utils/fonts";
+@use "../../../../../styles/utils/layout";
+
+:host {
+  display: table-row;
+
+  &:nth-child(odd) { background: #eee; }
+
+  > span {
+   display: table-cell;
+   padding: 0.5ex 1ex;
+
+    &.e_name {
+      width: 100%;
+      max-width: 0;
+
+      white-space: nowrap;
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+    }
+
+    &.e_posts {
+      text-align: right;
+      color: #666;
+      font-size: 0.75em;
+    }
+
+    &.e_gain {
+      text-align: right;
+    }
+  }
+
+  @include layout.media-non-wide {
+    span.e_posts { display: none; }
+  }
+}

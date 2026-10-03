@@ -4,6 +4,8 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { provideMockActivatedRoute } from '../../../../core/mocks/activated-route';
 import { provideMockDataConfig }     from '../../../../shared/mocks/data-config';
 
+import { newsgroup } from '../../fixtures/newsgroup.fixtures';
+
 import { Newsgroup } from './newsgroup';
 
 describe('Newsgroup', () => {
@@ -14,14 +16,7 @@ describe('Newsgroup', () => {
     await TestBed.configureTestingModule({
       imports: [Newsgroup,RouterTestingModule],
       providers: [ provideMockDataConfig(), provideMockActivatedRoute({
-        data : {
-          detail : {
-            name  : 'de.mock',
-            range : { from : { year : 2001, month : 1 }, to : { year : 2002, month : 2 } },
-            active : true,
-            months : []
-          }
-        },
+        data : { detail : newsgroup },
         params : { name : 'de.mock' }
       })]
     })

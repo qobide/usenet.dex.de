@@ -1,13 +1,6 @@
 
-@if (top10.length) {
-
-<h2>TopTen {{ latest | formatDataMonth }}</h2>
-
-<div class="usenet-dex-de_section">
-  <app-ranking-list [rankingList]="top10"></app-ranking-list>
-</div>
-
-<div class="usenet-dex-de_continue m-white"><a [routerLink]="[ '/ranking', latest.year, latest.month]">komplette Rangfolge anzeigen <i class="fa fa-chevron-double-right"></i></a></div>
+@if (rankings) {
+  <app-rankings [rankings]="rankings"></app-rankings>
 }
 
 <div class="usenet-dex-de_section">

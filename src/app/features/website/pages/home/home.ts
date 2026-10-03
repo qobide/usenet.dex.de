@@ -10,12 +10,12 @@ import { DataRangeMissingType } from '../../../../shared/types/data-range-missin
 import { DataRangeMissingLabelPipe } from '../../../../shared/pipes/data-range-missing-label-pipe';
 import { FormatDataMonthPipe }	     from '../../../../shared/pipes/format-data-month-pipe';
 
-import { RankingList } 		from '../../../../features/rankings/components/ranking-list/ranking-list';
-import { RankingItemInfo } 	from '../../../../features/rankings/models/ranking-item-info';
+import { Rankings } 	from '../../../../features/rankings/components/rankings/rankings';
+import { RankingsInfo } from '../../../../features/rankings/models/rankings-info';
 
 @Component({
   selector: 'app-home',
-  imports: [ RankingList, RouterModule, FormatDataMonthPipe, DataRangeMissingLabelPipe ],
+  imports: [ Rankings, RouterModule, FormatDataMonthPipe, DataRangeMissingLabelPipe ],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
@@ -25,15 +25,13 @@ export class Home implements OnInit, OnDestroy {
   #range    = inject(DataRangeService);
   #renderer = inject(Renderer2);
 
-  latest!  : DataRangeMonth;
-  top10!   : RankingItemInfo[];
+  rankings! : RankingsInfo;
 
   sources! : DataRangeSourceType[];
   missing! : DataRangeMissingType[];
 
   ngOnInit():void {
-    this.latest  = this.#range.latest;
-    this.top10   = this.#route.snapshot.data['home'].top10 || [];
+    this.rankings = this.#route.snapshot.data['home'].rankings;
 
     this.sources = this.#range.range.source  || [];
     this.missing = this.#range.range.missing || [];

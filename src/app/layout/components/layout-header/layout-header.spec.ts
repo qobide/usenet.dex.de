@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideMockActivatedRoute } from '../../../core/mocks/activated-route';
 import { provideMockDataConfig }     from '../../../shared/mocks/data-config';
 
+import { home } from '../../../features/website/fixtures/home.fixtures';
+
 import { LayoutHeader } from './layout-header';
 
 describe('LayoutHeader', () => {
@@ -13,7 +15,7 @@ describe('LayoutHeader', () => {
     await TestBed.configureTestingModule({
       imports: [LayoutHeader],
       providers: [ provideMockDataConfig(),
-        provideMockActivatedRoute({ data : { home : { top10 : [] } } }) ]
+        provideMockActivatedRoute({ data : { home } }) ]
     })
     .compileComponents();
 

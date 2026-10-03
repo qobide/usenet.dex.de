@@ -4,6 +4,8 @@ import { RouterTestingModule }       from "@angular/router/testing";
 import { provideMockActivatedRoute } from '../../../../core/mocks/activated-route';
 import { provideMockDataConfig }     from '../../../../shared/mocks/data-config';
 
+import { home } from '../../fixtures/home.fixtures';
+
 import { Home } from './home';
 
 describe('Home', () => {
@@ -13,8 +15,9 @@ describe('Home', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Home,RouterTestingModule],
-      providers: [ provideMockDataConfig(),
-        provideMockActivatedRoute({ data : { home : { top10 : [] } } }) ]
+      providers: [ provideMockDataConfig(), provideMockActivatedRoute({
+        data : { home }
+      })]
     })
     .compileComponents();
 
@@ -28,11 +31,7 @@ describe('Home', () => {
   });
 
   it('should have top10', () => {
-    expect(component.top10).toBeTruthy();
-  });
-
-  it('should have latest (range)', () => {
-    expect(component.latest).toBeTruthy();
+    expect(component.rankings).toBeTruthy();
   });
 
 });

@@ -1,0 +1,4 @@
+
+  <span class="e_name"><a [routerLink]="['/newsgroup',rankingItem().name]">{{ rankingItem().name }}</a></span>
+  <span class="e_posts">{{ rankingItem().postings }}</span>
+  <span class="e_gain">@if((rankingItem().gain || 0) > 0){+}{{ rankingItem().gain }}</span>

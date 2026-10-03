@@ -19,11 +19,9 @@ export class DataConfigLoader {
     valid : []
   };
 
-  version : number = 0;
+  version = 0;
 
   async load(): Promise<DataConfigInfo> {
-    const that = this;
-
     const ds = this.#data;
 
     const config  = await ds.getObject<DataConfigInfo>('config', Date.now());
@@ -38,7 +36,7 @@ export class DataConfigLoader {
       if (document.visibilityState === "visible") {
         const version = await ds.getObject<DataVersionInfo>('version', Date.now());
 
-        if (version.version != that.version) {
+        if (version.version != this.version) {
           location.reload();
         }
       }

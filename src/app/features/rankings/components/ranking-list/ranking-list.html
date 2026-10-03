@@ -1,4 +1,14 @@
-@for (item of rankingList(); track item.name) {
-  <app-ranking-item class="ranking-item" [rankingItem]="item">
-  </app-ranking-item>
+@switch (style()) {
+  @case ('gain') {
+    @for (item of rankingList(); track item.name) {
+      <app-ranking-item-gain class="ranking-item" [rankingItem]="item"></app-ranking-item-gain>
+    }
+  }
+
+  @default {
+    @for (item of rankingList(); track item.name) {
+      <app-ranking-item class="ranking-item" [rankingItem]="item"></app-ranking-item>
+    }
+  }
+
 }

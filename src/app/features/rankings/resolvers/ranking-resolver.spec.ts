@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { ResolveFn } from '@angular/router';
 
-import { RankingItemInfo } from '../models/ranking-item-info';
+import { RankingsInfo } from '../models/rankings-info';
 
 import { rankingResolver } from './ranking-resolver';
 
 describe('rankingResolver', () => {
-  const executeResolver: ResolveFn<RankingItemInfo[]> = (...resolverParameters) =>
+  const executeResolver: ResolveFn<RankingsInfo> = (...resolverParameters) =>
       TestBed.runInInjectionContext(() => rankingResolver(...resolverParameters));
 
   beforeEach(() => {

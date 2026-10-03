@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 export class CoreApiDataService {
   readonly baseURL = environment.dataURL;
 
-  cacheVersion:number = 0;
+  cacheVersion = 0;
 
   setCacheVersion(version:number) {
     this.cacheVersion = version;

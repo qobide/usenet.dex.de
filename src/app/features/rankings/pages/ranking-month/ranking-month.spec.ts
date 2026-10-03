@@ -13,9 +13,7 @@ describe('RankingMonth', () => {
     await TestBed.configureTestingModule({
       imports: [RankingMonth],
       providers: [ provideMockDataConfig(), provideMockActivatedRoute({
-        data : {
-          ranking : []
-        },
+        data : { ranking : [] },
         params : { year : 1999, month : 9 }
       })]
     })

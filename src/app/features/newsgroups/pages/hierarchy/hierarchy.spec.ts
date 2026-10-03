@@ -5,6 +5,8 @@ import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { provideMockActivatedRoute } from '../../../../core/mocks/activated-route';
 import { provideMockDataConfig     } from '../../../../shared/mocks/data-config';
 
+import { hierarchy } from '../../fixtures/hierarchy.fixtures';
+
 import { Hierarchy } from './hierarchy';
 
 describe('Hierarchy', () => {
@@ -15,14 +17,7 @@ describe('Hierarchy', () => {
     await TestBed.configureTestingModule({
       imports: [Hierarchy,RouterTestingModule, HttpClientTestingModule],
       providers : [ provideMockDataConfig(), provideMockActivatedRoute({
-        data : {
-          detail : {
-            name   : 'de.mock.ALL',
-            range  : { from : { year : 2000, month : 1 }, to : { year : 2001, month : 2 } },
-            active : true,
-            atoz   : []
-          }
-        },
+        data : { detail : hierarchy },
         params : { name : 'de.mock.ALL' }
       }) ]
     })
